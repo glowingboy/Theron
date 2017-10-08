@@ -23,11 +23,18 @@
 #elif THERON_CPP11
 
 #if THERON_GCC
-#if __GNUC__ >= 4 && __GNUC_MINOR__ > 4
+//gcc v5.4.0 should use atomic header. fs added.
+#if __GNUC__ >4 && __GNUC_MINOR__ >= 4
+#include <atomic>
+#elif    
+#if __GNUC__ <= 4 && __GNUC_MINOR__ > 4
 #include <atomic>
 #else
 #include <cstdatomic>
 #endif
+
+#endif
+
 #else
 #include <atomic>
 #endif // THERON_GCC
