@@ -200,6 +200,18 @@ SERVER = ${BIN}/Server
 # Targets
 #
 
+install: library _install
+
+_install:
+	@echo ********installing...********
+	mkdir -p /usr/local/Theron
+	cp -rv ./Include /usr/local/Theron/
+	cp -rv ./Lib /usr/local/Theron/
+	@echo ********installed********
+
+uninstall: 
+	rm -rfv /usr/local/Theron
+	@echo ********uninstalled********
 
 all: library tests benchmarks tutorial
 
