@@ -204,9 +204,10 @@ install: library _install
 
 _install:
 	@echo ********installing...********
-	mkdir -p /usr/local/Theron
-	cp -rv ./Include /usr/local/Theron/
-	cp -rv ./Lib /usr/local/Theron/
+	mkdir -p /usr/local/Theron/lib
+	mkdir -p /usr/local/Theron/include
+	cp -rv ./Include/* /usr/local/Theron/include
+	cp -rv ./Lib/* /usr/local/Theron/lib
 	@echo ********installed********
 
 uninstall: 
